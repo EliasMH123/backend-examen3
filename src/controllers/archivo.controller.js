@@ -15,7 +15,7 @@ export const createArchivo=async(req,res)=>{
 
     try {
         const{nombre,tipo,url,idusuario}=req.body;
-        await pool.query('select fc_create_archivo($1,$2,$3,$4)',[nombre,tipo,url,idusuario]);
+        await pool.query('select * from fc_create_archivo($1,$2,$3,$4)',[nombre,tipo,url,idusuario]);
         return res.status(200).json(`El archivo se ha creado correctamente`);
     } catch (e) {
         console.log(e);

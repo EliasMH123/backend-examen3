@@ -9,7 +9,7 @@ const fs = require('fs');
 const CLIENT_ID = '238294881843-22dpks11mfm1vl2kh7tdpscjqo22m8q5.apps.googleusercontent.com';
 const CLIENT_SECRET = '9xQBcZ8vqe2ucoiWikRDRLvt';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkdXN1YXJpbyI6MiwidXNlcm5hbWUiOiJlbGlhc21oIiwibm9tYnJlcyI6IkVsaWFzIiwiYXBlbGxpZG9zIjoiTWFtYW5pIEh1YXl0YSIsImlkcGVyc29uYSI6MX0sImlhdCI6MTYyNjc5NzI0OX0.xQg8KTGiO-6UHv9PDpSqMvb8uSc3psy8AO-HM16HEb4';
+const REFRESH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkdXN1YXJpbyI6MiwidXNlcm5hbWUiOiJlbGlhc21oIiwibm9tYnJlcyI6IkVsaWFzIiwiYXBlbGxpZG9zIjoiTWFtYW5pIEh1YXl0YSIsImlkcGVyc29uYSI6MX0sImlhdCI6MTYyNjgzMjE2N30.wPli102Bu6_E8EXlx-Bob86fp0jJSE0WAvWYAt8sYQ4';
 const oauth2Client = new google.auth.OAuth2(
     CLIENT_ID,
     CLIENT_SECRET,
@@ -89,7 +89,7 @@ async function uploadFile(tipo) {
     }
 }
 
-router.get("/:id", checkToken, archivoCtrl.readAllArchivo);
-router.post("/", checkToken, archivoCtrl.createArchivo);
-router.delete("/:id", checkToken, archivoCtrl.delArchivo);
+router.get("/:id", checkToken,archivoCtrl.readAllArchivo);
+router.post("/",  checkToken,archivoCtrl.createArchivo);
+router.delete("/:id", checkToken,archivoCtrl.delArchivo);
 export default router;
